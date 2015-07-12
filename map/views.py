@@ -9,7 +9,7 @@ from . import GeocodeService
 
 def index(request):
     latitude, longitude = GeocodeService.get_lat_lon(get_client_ip(request))
-    things = Thing.objects.all()[:10]
+    things = Thing.objects.all().order_by('-creation_time')[:100]
 
     return render(request, 'map/index.html', {
         'center_lat': latitude,

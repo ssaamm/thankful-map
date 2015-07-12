@@ -1,0 +1,15 @@
+#input-tile {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    z-index: 5;
+    background-color: #fff;
+    padding: 5px;
+    /*border: 1px solid #eeb422;
+    border-radius: 6px 6px 6px 6px;
+    font-family: 'Montserrat', sans-serif;*/
+}
+
+input {
+    width: 75%;
+}
