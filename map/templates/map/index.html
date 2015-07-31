@@ -14,7 +14,7 @@
       var infowindow;
       function initialize() { var mapOptions = {
           center: { lat: {{ center_lat }}, lng: {{ center_lon }} },
-          zoom: 8,
+          zoom: 5,
           mapTypeControl: true,
           mapTypeControlOptions: {
             style: google.maps.MapTypeControlStyle.DROPDOWN_MENU,
@@ -98,6 +98,11 @@
 
         infowindow.setContent(data['description']);
         infowindow.open(map, marker);
+
+        google.maps.event.addListener(marker, 'click', function(marker, i) {
+          infowindow.setContent(data['description']);
+          infowindow.setPosition({'lat': data['latitude'], 'lng': data['longitude']});
+        });
       }
       google.maps.event.addDomListener(window, 'load', initialize);
     </script>
